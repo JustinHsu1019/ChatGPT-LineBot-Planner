@@ -1,28 +1,26 @@
-# 課程規劃助理 ChatGPT-LineBot
-## 介紹:
-這是一個基於 Flask 和 LineBot API 的伺服器，旨在協助教師進行課程規劃。
-透過與 GPT 的交互，它提供了友善且有助於指導的課程建議。
-此外，這是一個流程機器人，專為遵循特定流程而設計，以確保每一步都按照預期進行。
+# Course Planning Assistant ChatGPT-LineBot
+## Introduction:
+This is a server based on Flask and the LineBot API, aimed at assisting educators in course planning. Through interactions with GPT, it offers friendly and guiding course suggestions. Moreover, it's a workflow bot, specifically designed to follow a particular process, ensuring each step is carried out as anticipated.
 
-## 主要功能:
-1. LineBot 對話：解析從 LineBot 發送的消息，並回覆適當的答案。
-2. 對話紀錄管理：儲存和管理用戶的對話紀錄。系統會檢查對話紀錄的總字數，確保其不超過 5000，以避免 Tokens 過多導致報錯。
-3. 重新規劃功能：用戶可以隨時選擇重新規劃課程，系統會詢問用戶是否確定此操作，並根據用戶的回覆進行相應的操作。
-4. 與 OpenAI 交互：組裝提示並詢問 GPT，以獲得課程建議。
+## Key Features:
+1. LineBot Conversation: Parse messages sent from LineBot and reply with appropriate responses.
+2. Conversation Record Management: Store and manage user conversation logs. The system checks the total word count of the conversation logs, ensuring it doesn't exceed 5000 to prevent excessive tokens causing errors.
+3. Re-planning Feature: Users can choose to re-plan the course at any time. The system will ask the user to confirm this action and will proceed based on the user's response.
+4. Interaction with OpenAI: Assemble prompts and query GPT for course suggestions.
 
-## 如何使用:
-1. 啟動伺服器。
-2. 透過 LineBot 發送消息，例如 "我想教授數學給高中生"。
-3. 跟隨課程規劃助理的指引進行對話，以完成課程規劃。
-4. 若想重新規劃課程，只需在 LineBot 中發送消息 "重新規劃"。系統會詢問您是否確定要重新開始，回覆 "Y" 表示確定，回覆 "N" 則繼續當前的規劃。
+## How to Use:
+1. Start the server.
+2. Send a message through LineBot, e.g., "I want to teach math to high school students."
+3. Follow the guidance of the Course Planning Assistant in the conversation to complete the course planning.
+4. If you wish to re-plan the course, simply send the message "re-plan" in LineBot. The system will ask if you're sure about restarting; reply with "Y" to confirm, or "N" to continue the current planning.
 
-## 技術細節:
-1. 使用 Flask 框架建立伺服器。
-2. 利用 LineBot API 處理消息。
-3. 使用 Azure OpenAI 的 GPT-35-turbo-16k 進行課程建議。
-4. 使用日誌工具來記錄和追踪伺服器的活動。
+## Technical Details:
+1. Server established using the Flask framework.
+2. Message handling through the LineBot API.
+3. Course suggestions using Azure OpenAI's GPT-35-turbo-16k.
+4. Logging tools used to record and track server activities.
 
-## 提示詞:
+## Prompt:
 ```python
 prompt = f"""你是一個友善且有助於指導的課程規劃師，擅長協助[教師]計劃課程。
 請依據下列步驟來推進對話，請確實確定前面步驟已經完成了，再進入下一步驟。
@@ -45,16 +43,16 @@ prompt = f"""你是一個友善且有助於指導的課程規劃師，擅長協�
 """
 ```
 
-## 待完善之項目:
-1. 將對話紀錄儲存在資料庫中，而不是程式內暫時的字典。
-2. 增加更多的錯誤處理和異常管理。
-3. 優化與 GPT 的交互，以提供更精確的課程建議及更嚴謹的流程遵守。
+## Areas for Improvement:
+1. Store conversation logs in a database instead of a temporary dictionary within the program.
+2. Incorporate more error handling and exception management.
+3. Optimize interactions with GPT to provide more accurate course suggestions and stricter adherence to the process.
 
-## 參考資料:
+## References:
 1. https://openai.com/blog/teaching-with-ai
 2. https://steam.oxxostudio.tw/category/python/example/line-bot-openai-1.html
 
-## Demo 畫面:
+## Demo Screenshots:
 
-![下載](https://github.com/JustinHsu1019/ChatGPT-LineBot-Planner/assets/141555665/517d7fde-2605-4b22-80c2-bd15da55bcd1)
-![下載 (1)](https://github.com/JustinHsu1019/ChatGPT-LineBot-Planner/assets/141555665/daf5d0eb-8d2a-4a5f-95b8-08bee1ff6788)
+![Download](https://github.com/JustinHsu1019/ChatGPT-LineBot-Planner/assets/141555665/517d7fde-2605-4b22-80c2-bd15da55bcd1)
+![Download (1)](https://github.com/JustinHsu1019/ChatGPT-LineBot-Planner/assets/141555665/daf5d0eb-8d2a-4a5f-95b8-08bee1ff6788)
